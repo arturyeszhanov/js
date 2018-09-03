@@ -24,7 +24,11 @@ let budget,
 	price
 //Запрашиваем бюджет и название магазина
 open.addEventListener('click', () => {
-	budget = prompt("Ваш бюджет на месяц?", "");
+	let timer = setTimeout(start, 2000);
+ });
+
+function start () {
+		budget = prompt("Ваш бюджет на месяц?", "");
 	
 	while (isNaN(budget) || budget == '' || budget == null) {
 		budget = +prompt("Ваш бюджет на месяц?", "");
@@ -35,8 +39,7 @@ open.addEventListener('click', () => {
 	name_value.textContent = prompt("Название вашего магазина?", "").toUpperCase();
 
 	budget_btn.disabled = false;
-
-});
+}
 
 //Заполнение полей категории товаров по кнопке "Утвердить"
 goods_btn.addEventListener('click', () => {
